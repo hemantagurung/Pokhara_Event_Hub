@@ -1,0 +1,283 @@
+/* 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+
+body {
+  display: flex;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  padding: 20px;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: #e7e8de;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2em;
+  color: black;
+  text-align: center;
+}
+
+.form-title {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.main-user-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px 0;
+}
+
+.user-input-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-input-box label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.user-input-box input {
+  height: 45px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  background: white;
+  color: black;
+}
+
+
+.gender-details-box {
+  margin-top: 10px;
+}
+
+.gender-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.gender-category {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.gender-category label {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.submit-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.submit-button input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background: #333;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-button input:hover {
+  background: #555;
+}
+
+
+.loginLink {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 16px;
+  color: #333;
+}
+
+.loginLink a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.loginLink a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+  .user-input-box input {
+    font-size: 14px;
+    height: 40px;
+  }
+  .submit-button input {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .gender-category {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .loginLink {
+    font-size: 14px;
+  }
+} */
+
+/* Global styles for register page */
+body {
+  background-color: #d9d9d9;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background-color: #333;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1.form-title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.main-user-info {
+  display: grid;
+  gap: 15px;
+}
+
+.user-input-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-input-box label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.user-input-box input {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  background-color: #444;
+  color: white;
+  outline: none;
+}
+
+.user-input-box input:focus {
+  border-color: #0056b3;
+}
+
+.gender-details-box {
+  margin: 20px 0;
+}
+
+.gender-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.gender-category {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.gender-category input {
+  margin-right: 10px;
+}
+
+.loginLink {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.loginLink p {
+  font-size: 14px;
+}
+
+.loginLink a {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.loginLink a:hover {
+  text-decoration: underline;
+}
+
+.submit-button {
+  text-align: center;
+}
+
+.submit-button input {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.submit-button input:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .submit-button input {
+    width: 100%;
+  }
+}

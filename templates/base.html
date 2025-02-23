@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "includes/event/head.html" %}
+  </head>
+
+  <body>
+    {% include "includes/event/header.html" %}
+    <main>{% block content %} {% endblock content %}</main>
+    {% include "includes/event/footer.html" %}
+     {% include "includes/event/scripts.html" %}
+  </body>
+</html>

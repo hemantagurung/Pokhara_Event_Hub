@@ -1,0 +1,28 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/nav.css' %}" />
+
+<header>
+  <img src="{% static 'Images/logo.png' %}" alt="img" height="60" width="60" />
+
+  <ul class="navbar">
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="">Events</a></li>
+    <li><a href="">AboutUs</a></li>
+    <li><a href="">Blog</a></li>
+    <li><a href="">Booking</a></li>
+    <li><a href="">Vote</a></li>
+  </ul>
+
+  <form action="">
+    <input type="text" placeholder="  search..." />
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+
+  <div class="main">
+    <a href="{% url 'login' %}" class="user"
+      ><i class="ri-user-line"></i>Log in</a
+    >
+
+    <div class="bx bx-menu" id="menu-icon"></div>
+  </div>
+</header>
