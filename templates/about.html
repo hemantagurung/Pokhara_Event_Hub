@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div style="max-width: 1000px; margin: auto; padding: 20px">
+  <h1 style="font-size: 36px; font-weight: bold; color: #000 ; margin-top : 9% ">About Us</h1>
+
+  <div
+    style="
+      background: #f7f7f7;
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    "
+  >
+    <img
+      src="{% static 'Images/AboutUs1.jpeg' %}"
+      alt="About Image"
+      style="width: 200px; height: 150px; border-radius: 10px"
+    />
+
+    <p style="color: #444; font-size: 16px; line-height: 1.6">
+      Welcome to <strong>Pokhara Event Hub</strong> – your one-stop destination
+      for discovering and experiencing the vibrant events and celebrations in
+      the heart of Pokhara! <br /><br />
+      We are dedicated to connecting event organizers with enthusiasts by
+      providing a comprehensive platform that showcases the best of Pokhara’s
+      entertainment scene.
+    </p>
+  </div>
+
+  <div
+    style="
+      margin-top: 20px;
+      padding: 20px;
+      background: #f7f7f7;
+      border-radius: 10px;
+    "
+  >
+    <p style="color: #444; font-size: 16px; line-height: 1.6">
+      Whether you're a local resident or a traveler exploring the beauty of
+      Pokhara, we aim to make your time here memorable by helping you find
+      events that match your interests.
+      <br /><br />
+      Join us in celebrating the culture, music, and vibrancy of Pokhara. Let’s
+      make every event an unforgettable experience together!
+    </p>
+    <img
+      src="{% static 'Images/About2.jpeg' %}"
+      alt="Event Image"
+      style="width: 100%; height: auto; margin-top: 10px; border-radius: 10px"
+    />
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,143 @@
+/* General Styles */
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .blog-title, .more-blogs-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Latest Blog Section */
+  .blog-main {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+  }
+  
+  .blog-main h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .blog-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .blog-image:hover {
+    transform: scale(1.05);
+  }
+  
+  .blog-main p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin: 15px 0;
+  }
+  
+  /* Read More Button */
+  .read-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .read-more:hover {
+    background: #0056b3;
+  }
+  
+  /* More Blogs Section */
+  .more-blogs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .blog-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .blog-card h3 {
+    font-size: 22px;
+    margin: 10px 0;
+    color: #222;
+  }
+  
+  .blog-card p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  /* More Blogs Button */
+  .button-container {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .more-blogs-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #28a745;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .more-blogs-btn:hover {
+    background: #1e7e34;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .blog-main p {
+      font-size: 16px;
+    }
+  
+    .blog-card h3 {
+      font-size: 20px;
+    }
+  
+    .blog-card p {
+      font-size: 14px;
+    }
+  }
+  

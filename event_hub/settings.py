@@ -28,6 +28,10 @@ INSTALLED_APPS = [
     'event',
 ]
 
+AUTHENTICATION_BACKENDS=[
+    'django.contrib.auth.backends.ModelBackend'
+]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -107,6 +111,13 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
+import os
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 
 STATIC_URL = 'static/'

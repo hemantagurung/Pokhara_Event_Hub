@@ -1,13 +1,13 @@
-{% load static %}
+{% comment %} {% load static %}
 <link rel="stylesheet" href="{% static 'css/nav.css' %}" />
 
 <header>
-  <img src="{% static 'Images/logo.png' %}" alt="img" height="60" width="60" />
+  <img src="{% static 'Images/Logo.png' %}" alt="img" height="60" width="60" />
 
   <ul class="navbar">
-    <li><a href="#" class="active">Home</a></li>
+    <li><a href="{% url 'home' %}" class="active">Home</a></li>
     <li><a href="">Events</a></li>
-    <li><a href="">AboutUs</a></li>
+    <li><a href="{% url 'about_us' %}">AboutUs</a></li>
     <li><a href="">Blog</a></li>
     <li><a href="">Booking</a></li>
     <li><a href="">Vote</a></li>
@@ -19,9 +19,76 @@
   </form>
 
   <div class="main">
-    <a href="{% url 'login' %}" class="user"
-      ><i class="ri-user-line"></i>Log in</a
-    >
+    <div class="dropdown">
+      <button class="dropbtn">
+        <i class="ri-user-line"></i>
+        {% if request.user.is_authenticated %} {{ request.user.username }} {% else %} Log in {% endif %}
+      </button>
+      <div class="dropdown-content">
+        {% if request.user.is_authenticated %}
+        <a href="#">Profile</a>
+        <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="bx bx-menu" id="menu-icon"></div>
+  </div>
+</header> {% endcomment %}
+
+
+
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/nav.css' %}" />
+
+<header>
+  <img src="{% static 'Images/Logo.png' %}" alt="img" height="60" width="60" />
+
+  <ul class="navbar">
+    <li>
+      <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+    </li>
+    
+    <li><a href="">Events</a></li>
+    
+    <li>
+      <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="{% url 'about_us' %}">About Us</a>
+    </li>
+    <li>
+      <a class="nav-link {% if request.path == '/blog_page/' %}active{% endif %}" href="{% url 'blog' %}">Blog</a>
+    </li>
+   
+  </ul>
+
+  <form action="">
+    <input type="text" placeholder="  search..." />
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+
+  <div class="main">
+    <div class="dropdown">
+      <button class="dropbtn">
+        <i class="ri-user-line"></i>
+        {% if request.user.is_authenticated %} 
+          {{ request.user.username }} 
+        {% else %} 
+          Log in 
+        {% endif %}
+      </button>
+      <div class="dropdown-content">
+        {% if request.user.is_authenticated %}
+          <a href="#">Profile</a>
+          <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+          <a href="{% url 'login' %}">Login</a>
+          <a href="{% url 'signup' %}">Sign Up</a>
+        {% endif %}
+      </div>
+    </div>
 
     <div class="bx bx-menu" id="menu-icon"></div>
   </div>

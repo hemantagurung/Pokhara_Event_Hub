@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<link rel="stylesheet" href="{% static 'css/blog.css' %}" />
+
+<div class="blog-container">
+  <h1 class="blog-title">Blogs</h1>
+
+  <!-- Latest Blog Section -->
+  <div class="blog-main">
+    {% if latest_blog %}
+    <h2>{{ latest_blog.title }}</h2>
+    <img src="{% static 'Images/AboutUs1.jpeg' %}" />
+    <p>{{ latest_blog.content|truncatewords:50 }}</p>
+    <a href="{% url 'blog_detail' latest_blog.id %}" class="read-more"
+      >Read More</a
+    >
+    {% else %}
+    <p>No blogs available.</p>
+    {% endif %}
+  </div>
+
+  <!-- More Blogs Section -->
+  <h2 class="more-blogs-title">More Blogs</h2>
+  <div class="more-blogs">
+    {% for blog in more_blogs %}
+    <div class="blog-card">
+      <img src="{% static 'Images/AboutUs1.jpeg' %}"  />
+      <h3>{{ blog.title }}</h3>
+      <p>{{ blog.content|truncatewords:30 }}</p>
+      <a href="{% url 'blog_detail' blog.id %}" class="read-more">Read More</a>
+    </div>
+    {% empty %}
+    <p>No more blogs available.</p>
+    {% endfor %}
+  </div>
+
+  <!-- More Blogs Button -->
+  <div class="button-container">
+    <a href="" class="more-blogs-btn">More Blogs</a>
+  </div>
+</div>
+
+{% endblock content %}

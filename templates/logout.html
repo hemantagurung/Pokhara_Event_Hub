@@ -1,0 +1,8 @@
+{% load static %}
+<html>
+  <h1>Welcome</h1>
+  <form class="logout" action="{% url 'logout' %}" method="POST">
+    {% csrf_token %}
+    <button type="submit">Log Out</button>
+  </form>
+</html>
