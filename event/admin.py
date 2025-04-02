@@ -13,4 +13,5 @@ eventorganizing_site = EventAdminArea(name='EventAdmin')
 eventorganizing_site.register(models.Event)
 
 
+
 admin.site.register(Blog)
