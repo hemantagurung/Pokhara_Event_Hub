@@ -1,0 +1,76 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="all">
+        <div class="media">
+          <img
+            src="{% static 'Images/Logo.png' %}"
+            alt="Company Logo"
+            height="70"
+            width="70"
+          />
+
+          <h2>Follow Our socials</h2>
+
+          <div class="social">
+            <a href="https://www.facebook.com/" target="_blank">
+              <i class="ri-facebook-box-fill"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+              <i class="ri-instagram-line"></i>
+            </a>
+            <a href="https://x.com/?mx=2" target="_blank">
+              <i class="ri-twitter-x-line"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="Help">
+          <h2>Help</h2>
+          <ul class="help-1">
+            <li><a>FAQ</a></li>
+            <li><a>FAQ</a></li>
+            <li><a>FAQ</a></li>
+            <li><a>FAQ</a></li>
+
+            
+          </ul>
+        </div>
+
+        <div class="contact">
+          <h1>Contact Us</h1>
+          <ul>
+            <li>
+              <a
+                href="https://www.google.com/maps/@28.2057133,83.9870783,15.19z?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D"
+              >
+                Gharipatan-07, Pokhara
+              </a>
+            </li>
+            <li><a href="tel:+9779816117632">+977 9816117632</a></li>
+            <li>
+              <a href="mailto:hemantatamu3@gmail.com" target="_blank">
+                hemantatamu3@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footerend">
+        <p>Copyright @ {% now "Y" %} Event Hub</p>
+      </div>
+    </div>
+  </body>
+</html>

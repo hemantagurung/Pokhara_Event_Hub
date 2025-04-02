@@ -1,0 +1,102 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
+
+/* Filters Section */
+.filters {
+  display: flex;
+  gap: 10px;
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.filters select,
+.filters input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.filters button {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.filters button:first-of-type {
+  background: black;
+  color: white;
+}
+
+.filters button:last-of-type {
+  background: #ddd;
+  color: black;
+}
+
+/* Events Section */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.events-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.event-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+}
+
+.event-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.event-card h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.event-card .location,
+.event-card .artist,
+.event-card .date {
+  font-size: 14px;
+  color: gray;
+}
+
+.event-card .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.book-btn {
+  display: block;
+  background: black;
+  color: white;
+  padding: 8px 0;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.no-events {
+  text-align: center;
+  color: gray;
+}

@@ -1,0 +1,132 @@
+* {
+  margin: 20px;
+  padding: 20px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  background: #ffffff; /* Changed to white */
+  padding: 30px 0; /* Increased padding for better spacing */
+}
+
+.container h2 {
+  color: black;
+}
+
+/* Main Layout */
+.all {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Slightly increased padding */
+}
+
+/* Media Section */
+.media {
+  margin: 25px 0; /* Adjusted margin */
+}
+
+.media h2 {
+  margin: 20px 0; /* Increased margin for better spacing */
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.social {
+  display: flex;
+  gap: 12px; /* Slightly increased gap */
+}
+
+.social a {
+  font-size: 2rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.social a:hover {
+  color: #666;
+}
+
+/* Help Section */
+.Help {
+  margin: 25px 0; /* Adjusted margin */
+}
+
+.Help h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 20px; /* Increased margin */
+  color: black;
+}
+
+.help-1 {
+  list-style: none;
+}
+
+.help-1 li {
+  margin-bottom: 10px; /* Slightly increased spacing */
+}
+
+.help-1 a {
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.help-1 a:hover {
+  color: #666;
+}
+
+/* Contact Section */
+.contact {
+  margin: 25px 0; /* Adjusted margin */
+}
+
+.contact h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 20px; /* Increased margin */
+  color: black;
+}
+
+.contact ul {
+  list-style: none;
+}
+
+.contact a {
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.contact a:hover {
+  color: #666;
+}
+
+/* Footer End */
+.footerend {
+  text-align: center;
+  padding: 15px 0; /* Increased padding */
+  border-top: 1px solid #eee; /* Lighter border with white background */
+  margin-top: 20px; /* Added margin for separation */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .all {
+    flex-direction: column;
+    padding: 0 15px; /* Adjusted for mobile */
+  }
+
+  .media,
+  .Help,
+  .contact {
+    margin: 20px 0; /* Adjusted for mobile */
+    text-align: center;
+  }
+
+  .social {
+    justify-content: center;
+  }
+}

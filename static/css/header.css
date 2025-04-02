@@ -1,0 +1,193 @@
+/* Reset only for navigation elements */
+.navbar,
+.navbar li,
+.dropdown-content {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+/* Scope styles to header */
+header.nav-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 12%;
+  transition: all 0.5s ease;
+  background-color: #e7e8de; /* Changed from #d9d9d9 to match your second definition */
+}
+
+/* Logo styling */
+header.nav-header img {
+  height: 60px;
+  width: 60px;
+}
+
+/* Navbar styling */
+header.nav-header .navbar {
+  display: flex;
+}
+
+header.nav-header .navbar li {
+  margin: 0 20px;
+}
+
+header.nav-header .navbar a {
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 5px 0;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+
+header.nav-header .navbar a:hover {
+  color: #007bff;
+  transform: translateY(10px);
+}
+
+header.nav-header .navbar a.active {
+  color: #007bff;
+}
+
+/* Search form styling */
+header.nav-header form {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  margin: 0 2px;
+}
+
+header.nav-header form input[type="text"] {
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+header.nav-header form button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+header.nav-header form button:hover {
+  background-color: #0056b3;
+}
+
+/* Main section (user dropdown and menu icon) */
+header.nav-header .main {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+/* Dropdown styling */
+header.nav-header .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+header.nav-header .dropbtn {
+  background-color: transparent;
+  color: black;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+header.nav-header .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+header.nav-header .dropdown-content a {
+  color: black;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+header.nav-header .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+header.nav-header .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Menu icon */
+header.nav-header #menu-icon {
+  font-size: 25px;
+  color: black;
+  cursor: pointer;
+  z-index: 1001;
+  display: none;
+}
+
+/* Responsive design */
+@media (max-width: 1280px) {
+  header.nav-header {
+    padding: 14px 2%;
+    transition: 0.2s;
+  }
+
+  header.nav-header .navbar a {
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 1028px) {
+  header.nav-header #menu-icon {
+    display: block;
+  }
+
+  header.nav-header .navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 270px;
+    height: 35vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+
+  header.nav-header .navbar.open {
+    right: 2%;
+  }
+
+  header.nav-header .navbar a {
+    display: block;
+    margin: 11px 0;
+    padding: 0 20px;
+  }
+
+  header.nav-header .navbar a:hover {
+    color: #007bff;
+    transform: translateY(12px);
+  }
+
+  header.nav-header form {
+    display: none;
+  }
+}

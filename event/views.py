@@ -95,20 +95,123 @@ def about_us(request):
 from django.shortcuts import render
 from .models import Blog  # Assuming you have a Blog model
 
+# from django.shortcuts import render, get_object_or_404
+# from .models import Blog
+
+# def blogs(request):
+#     latest_blog = Blog.objects.filter(is_published=True).order_by('-date_posted').first()
+#     more_blogs = Blog.objects.filter(is_published=True).order_by('-date_posted')[1:5]  # Exclude the latest one
+#     context = {
+#         'latest_blog': latest_blog,
+#         'more_blogs': more_blogs,
+#     }
+    
+#     return render(request, 'blog.html', context)
+
+
+
+# def blog_detail(request):
+#     # blog = get_object_or_404(Blog, id=blog_id)
+
+#     lastest_blog = Blog.objects.all()
+#     return render(request, 'blog.html', {'blog' :  lastest_blog})
+#     # return render(request, 'event.html', {'events': events})
+
+
 from django.shortcuts import render, get_object_or_404
-from .models import Blog
+from event.models import Blog
 
 def blogs(request):
     latest_blog = Blog.objects.filter(is_published=True).order_by('-date_posted').first()
-    more_blogs = Blog.objects.filter(is_published=True).order_by('-date_posted')[1:5]  # Exclude the latest one
-
+    more_blogs = Blog.objects.filter(is_published=True).order_by('-date_posted')[1:5]
+    print("Latest Blog Title:", latest_blog.title if latest_blog else "None")
+    print("More Blogs Titles:", [blog.title for blog in more_blogs])
     context = {
         'latest_blog': latest_blog,
         'more_blogs': more_blogs,
     }
     return render(request, 'blog.html', context)
 
-def blog_detail(request, blog_id):
-    blog = get_object_or_404(Blog, id=blog_id)
+def blog_detail(request, title):
+    print("Requested Title:", title)  # Debug
+    blog = get_object_or_404(Blog, title=title, is_published=True)
     return render(request, 'blog_detail.html', {'blog': blog})
 
+
+
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Event, Blog, VotingEvent
+
+
+def create_event(request):
+    if request.method == "POST":
+        form = Event(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('eventadmin')
+    else:
+        form = Event()
+    return render(request, 'create_event.html', {'form': form})
+
+def edit_event(request, event_id):
+    event = get_object_or_404(Event, id=event_id)
+    if request.method == "POST":
+        form = Event(request.POST, instance=event)
+        if form.is_valid():
+            form.save()
+            return redirect('eventadmin')
+    else:
+        form = Event(instance=event)
+    return render(request, 'edit_event.html', {'form': form})
+
+
+def create_blog(request):
+    if request.method == "POST":
+        form = Blog(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('blog_list')
+    else:
+        form = Blog()
+    return render(request, 'create_blog.html', {'form': form})
+
+def edit_blog(request, blog_id):
+    blog = get_object_or_404(Blog, id=blog_id)
+    if request.method == "POST":
+        form = Blog(request.POST, instance=blog)
+        if form.is_valid():
+            form.save()
+            return redirect('blog_list')
+    else:
+        form = Blog(instance=blog)
+    return render(request, 'edit_blog.html', {'form': form})
+
+
+
+def create_voting_event(request):
+    if request.method == "POST":
+        form = VotingEvent(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('voting_event_list')
+    else:
+        form = VotingEvent()
+    return render(request, 'create_voting_event.html', {'form': form})
+
+def edit_voting_event(request, voting_event_id):
+    voting_event = get_object_or_404(VotingEvent, id=voting_event_id)
+    if request.method == "POST":
+        form = VotingEvent(request.POST, instance=voting_event)
+        if form.is_valid():
+            form.save()
+            return redirect('voting_event_list')
+    else:
+        form = VotingEvent(instance=voting_event)
+    return render(request, 'edit_voting_event.html', {'form': form})
+
+from django.shortcuts import render
+from .models import Event
+
+def events_page(request):
+    events = Event.objects.all()
+    return render(request, 'event.html', {'events': events})

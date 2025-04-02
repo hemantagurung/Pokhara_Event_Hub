@@ -1,0 +1,78 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<link rel="stylesheet" href="{% static 'css/event.css' %}" />
+
+<h1 style="font-size: 36px; font-weight: bold; color: #000; margin-top: 9%">
+  Events
+</h1>
+<div class="container">
+  <!-- Filters Section -->
+  <div class="filters">
+    <select id="artistFilter">
+      <option value="">Filter by Artist</option>
+      {% for event in events %}
+      <option value="{{ event.artist }}">{{ event.artist }}</option>
+      {% endfor %}
+    </select>
+
+    <input type="date" id="dateFilter" />
+    <input type="number" id="priceFilter" placeholder="Max Price" min="0" />
+
+    <button onclick="applyFilters()">Search</button>
+    <button onclick="clearFilters()">Clear</button>
+  </div>
+
+  <!-- Events Section -->
+  <h1 class="title">Events</h1>
+
+  <div class="events-container" id="eventsContainer">
+    {% for event in events %}
+    <div
+      class="event-card"
+      data-artist="{{ event.artist }}"
+      data-date="{{ event.date }}"
+      data-price="{{ event.price }}"
+    >
+      <img src="{{ event.image.url }}" alt="{{ event.name }}" />
+      <h2>{{ event.name }}</h2>
+      <p class="location">{{ event.location }}</p>
+      <p class="artist">Artist: {{ event.artist }}</p>
+      <p class="price"> {{ event.price }}</p>
+      <p class="date">{{ event.date }}</p>
+      <a href="/booking/{{ event.id }}/" class="book-btn">Book</a>
+    </div>
+    {% empty %}
+    <p class="no-events">No events available.</p>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  function applyFilters() {
+    let artist = document.getElementById("artistFilter").value.toLowerCase();
+    let date = document.getElementById("dateFilter").value;
+    let price = document.getElementById("priceFilter").value;
+
+    document.querySelectorAll(".event-card").forEach((event) => {
+      let eventArtist = event.getAttribute("data-artist").toLowerCase();
+      let eventDate = event.getAttribute("data-date");
+      let eventPrice = parseFloat(event.getAttribute("data-price"));
+
+      let show = true;
+      if (artist && eventArtist !== artist) show = false;
+      if (date && eventDate !== date) show = false;
+      if (price && eventPrice > parseFloat(price)) show = false;
+
+      event.style.display = show ? "block" : "none";
+    });
+  }
+
+  function clearFilters() {
+    document.getElementById("artistFilter").value = "";
+    document.getElementById("dateFilter").value = "";
+    document.getElementById("priceFilter").value = "";
+    applyFilters();
+  }
+</script>
+
+{% endblock %}
